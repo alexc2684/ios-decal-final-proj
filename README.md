@@ -7,8 +7,10 @@ Authors:
 - Steven Holman
 - Kijung Kim
 - Phat Pham
+
 **Purpose**
 To entertain those that are dying from pure boredom. More specifically, create a fun endless runner game that is based on using portals to move you from danger to safety before hitting an obstacle.
+
 **Features**
 - User-generated portals
 - Time-based scoring
@@ -24,6 +26,7 @@ To entertain those that are dying from pure boredom. More specifically, create a
 - To avoid these obstacles, you need to press a location where your player will enter a portal and where he will exit. This entrance needs to be the same horizontal level as the player and the exit portal will be directly vertical to the entrance portal. As the player enters the portal, he pops out at the exit portal, avoiding the obstacle.
 - The game will speed up as he progresses until the player is not quick enough to dodge the obstacles.
 - Once the player dies, transition segue to a pop up AfterGameView that shows the score, and input name if you want to save it. This view will have transition buttons to restart game or main menu.
+
 **Implementation**
 - Model
  - ObstacleGeneration.swift
