@@ -18,6 +18,7 @@ class HighScoreViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        self.view.backgroundColor = UIColor.white
         // Dispose of any resources that can be recreated.
     }
     

@@ -28,7 +28,7 @@ class StartScreenViewController: UIViewController {
         
         gameTitle = UILabel()
         gameTitle.text = "Portal Run"
-        gameTitle.font = UIFont(name: "AvenirNextCondensed-BoldItalic ", size: 60)
+        gameTitle.font = UIFont(name: "AvenirNextCondensed-BoldItalic ", size: 50)
         gameTitle.sizeToFit()
         gameTitle.frame.origin = self.view.center
         
