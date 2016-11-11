@@ -12,41 +12,26 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
-    /** Displays the title of the game. */
-    var gameTitle: UILabel!
-    
-    /** A button that allows the game to start. */
-    var startGameButton: UIButton!
-    
-    /** A button that allows the user to view the high score. */
-    var highScoreButton: UIButton!
-    
-    /** A button that allows the user to see the instructions for the game. */
-    var instructionButton: UIButton!
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
         
-        gameTitle = UILabel()
-        gameTitle.text = "Portal Run"
-        gameTitle.sizeToFit()
-        
-        
-        startGameButton = UIButton()
-        
-        highScoreButton = UIButton()
-        
-        instructionButton = UIButton()
-        
-        
-        self.view.addSubview(gameTitle)
+        // Do any additional setup after loading the view.
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
+        // Dispose of any resources that can be recreated.
     }
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
 
 }

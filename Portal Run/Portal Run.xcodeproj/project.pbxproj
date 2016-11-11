@@ -17,6 +17,9 @@
 		F82B2D451DD6457B001C0483 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82B2D431DD6457B001C0483 /* LaunchScreen.storyboard */; };
 		F82B2D501DD6457B001C0483 /* Portal_RunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B2D4F1DD6457B001C0483 /* Portal_RunTests.swift */; };
 		F82B2D5B1DD6457B001C0483 /* Portal_RunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B2D5A1DD6457B001C0483 /* Portal_RunUITests.swift */; };
+		F82B2D701DD6601B001C0483 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B2D6F1DD6601B001C0483 /* StartScreenViewController.swift */; };
+		F82B2D721DD66398001C0483 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B2D711DD66397001C0483 /* InstructionViewController.swift */; };
+		F82B2D741DD663D7001C0483 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B2D731DD663D7001C0483 /* HighScoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		F82B2D561DD6457B001C0483 /* Portal RunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Portal RunUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82B2D5A1DD6457B001C0483 /* Portal_RunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portal_RunUITests.swift; sourceTree = "<group>"; };
 		F82B2D5C1DD6457B001C0483 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F82B2D6F1DD6601B001C0483 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
+		F82B2D711DD66397001C0483 /* InstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
+		F82B2D731DD663D7001C0483 /* HighScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				F82B2D341DD6457A001C0483 /* AppDelegate.swift */,
+				F82B2D6F1DD6601B001C0483 /* StartScreenViewController.swift */,
+				F82B2D711DD66397001C0483 /* InstructionViewController.swift */,
+				F82B2D731DD663D7001C0483 /* HighScoreViewController.swift */,
 				F82B2D3C1DD6457A001C0483 /* GameViewController.swift */,
 				F82B2D431DD6457B001C0483 /* LaunchScreen.storyboard */,
 				F82B2D411DD6457B001C0483 /* Assets.xcassets */,
@@ -278,9 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F82B2D721DD66398001C0483 /* InstructionViewController.swift in Sources */,
 				F82B2D3B1DD6457A001C0483 /* GameScene.swift in Sources */,
 				F82B2D3D1DD6457A001C0483 /* GameViewController.swift in Sources */,
 				F82B2D351DD6457A001C0483 /* AppDelegate.swift in Sources */,
+				F82B2D701DD6601B001C0483 /* StartScreenViewController.swift in Sources */,
+				F82B2D741DD663D7001C0483 /* HighScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +537,7 @@
 				F82B2D611DD6457B001C0483 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F82B2D621DD6457B001C0483 /* Build configuration list for PBXNativeTarget "Portal RunTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +546,7 @@
 				F82B2D641DD6457B001C0483 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F82B2D651DD6457B001C0483 /* Build configuration list for PBXNativeTarget "Portal RunUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +555,7 @@
 				F82B2D671DD6457B001C0483 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
