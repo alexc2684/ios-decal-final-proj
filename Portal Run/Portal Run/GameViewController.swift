@@ -11,45 +11,42 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    
+    /** Displays the title of the game. */
+    var gameTitle: UILabel!
+    
+    /** A button that allows the game to start. */
+    var startGameButton: UIButton!
+    
+    /** A button that allows the user to view the high score. */
+    var highScoreButton: UIButton!
+    
+    /** A button that allows the user to see the instructions for the game. */
+    var instructionButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
         
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
-        }
+        gameTitle = UILabel()
+        gameTitle.text = "Portal Run"
+        gameTitle.sizeToFit()
+        
+        
+        startGameButton = UIButton()
+        
+        highScoreButton = UIButton()
+        
+        instructionButton = UIButton()
+        
+        
+        self.view.addSubview(gameTitle)
     }
-
-    override var shouldAutorotate: Bool {
-        return true
-    }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
 
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
 }

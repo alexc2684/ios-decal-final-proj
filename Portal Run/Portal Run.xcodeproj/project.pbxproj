@@ -104,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				F82B2D341DD6457A001C0483 /* AppDelegate.swift */,
-				F82B2D3A1DD6457A001C0483 /* GameScene.swift */,
 				F82B2D3C1DD6457A001C0483 /* GameViewController.swift */,
 				F82B2D431DD6457B001C0483 /* LaunchScreen.storyboard */,
 				F82B2D411DD6457B001C0483 /* Assets.xcassets */,
@@ -135,9 +134,10 @@
 		F82B2D681DD645AC001C0483 /* Miscelleneous */ = {
 			isa = PBXGroup;
 			children = (
+				F82B2D3E1DD6457A001C0483 /* Main.storyboard */,
+				F82B2D3A1DD6457A001C0483 /* GameScene.swift */,
 				F82B2D361DD6457A001C0483 /* GameScene.sks */,
 				F82B2D381DD6457A001C0483 /* Actions.sks */,
-				F82B2D3E1DD6457A001C0483 /* Main.storyboard */,
 			);
 			name = Miscelleneous;
 			sourceTree = "<group>";
