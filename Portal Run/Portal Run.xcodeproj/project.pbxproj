@@ -110,10 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				F82B2D341DD6457A001C0483 /* AppDelegate.swift */,
-				F82B2D6F1DD6601B001C0483 /* StartScreenViewController.swift */,
-				F82B2D711DD66397001C0483 /* InstructionViewController.swift */,
-				F82B2D731DD663D7001C0483 /* HighScoreViewController.swift */,
-				F82B2D3C1DD6457A001C0483 /* GameViewController.swift */,
+				F82B2D751DD66B1B001C0483 /* ViewControllers */,
 				F82B2D431DD6457B001C0483 /* LaunchScreen.storyboard */,
 				F82B2D411DD6457B001C0483 /* Assets.xcassets */,
 				F82B2D681DD645AC001C0483 /* Miscelleneous */,
@@ -149,6 +146,17 @@
 				F82B2D381DD6457A001C0483 /* Actions.sks */,
 			);
 			name = Miscelleneous;
+			sourceTree = "<group>";
+		};
+		F82B2D751DD66B1B001C0483 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F82B2D6F1DD6601B001C0483 /* StartScreenViewController.swift */,
+				F82B2D3C1DD6457A001C0483 /* GameViewController.swift */,
+				F82B2D731DD663D7001C0483 /* HighScoreViewController.swift */,
+				F82B2D711DD66397001C0483 /* InstructionViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
