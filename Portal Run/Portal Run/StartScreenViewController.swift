@@ -45,6 +45,7 @@ class StartScreenViewController: UIViewController {
         startGameButton.titleLabel?.font = UIFont(name: "Menlo-Regular", size: (startGameButton.titleLabel?.font.pointSize)!)
         startGameButton.addTarget(self, action: #selector(startNewGame), for: .touchUpInside)
         startGameButton.sizeToFit()
+        startGameButton.layer.cornerRadius = 10
         self.view.addSubview(startGameButton)
         startGameButton.translatesAutoresizingMaskIntoConstraints = false
         let xCenterConstraintForStartGameButton = NSLayoutConstraint(item: startGameButton, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
@@ -60,6 +61,7 @@ class StartScreenViewController: UIViewController {
         highScoreButton.titleLabel?.font = UIFont(name: "Menlo-Regular", size: (highScoreButton.titleLabel?.font.pointSize)!)
         highScoreButton.addTarget(self, action: #selector(showHighScores), for: .touchUpInside)
         highScoreButton.sizeToFit()
+        highScoreButton.layer.cornerRadius = 10
         self.view.addSubview(highScoreButton)
         highScoreButton.translatesAutoresizingMaskIntoConstraints = false
         let xCenterConstraintForHighScoreButton = NSLayoutConstraint(item: highScoreButton, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
@@ -74,6 +76,7 @@ class StartScreenViewController: UIViewController {
         instructionButton.titleLabel?.font = UIFont(name: "Menlo-Regular", size: (instructionButton.titleLabel?.font.pointSize)!)
         instructionButton.addTarget(self, action: #selector(showInstructions), for: .touchUpInside)
         instructionButton.sizeToFit()
+        instructionButton.layer.cornerRadius = 10
         self.view.addSubview(instructionButton)
         instructionButton.translatesAutoresizingMaskIntoConstraints = false
         let xCenterConstraintForInstructionButton = NSLayoutConstraint(item: instructionButton, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
