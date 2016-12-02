@@ -14,7 +14,6 @@ class GameScene: SKScene {
     let testingImage = SKSpriteNode(imageNamed: "Spaceship")
     
     override func didMove(to view: SKView) {
-        self.backgroundColor = UIColor.white
         testingImage.position = CGPoint(x: self.size.height, y: self.size.height)
         self.addChild(testingImage)
     }
