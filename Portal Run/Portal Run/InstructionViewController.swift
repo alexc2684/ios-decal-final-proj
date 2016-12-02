@@ -12,7 +12,7 @@ class InstructionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor.green //TODO: Needs to be replaced
         // Do any additional setup after loading the view.
     }
 

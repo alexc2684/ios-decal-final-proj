@@ -90,7 +90,7 @@ class StartScreenViewController: UIViewController {
     }
     
     func showHighScores() {
-        let highScoreVC = InstructionViewController()
+        let highScoreVC = HighScoreViewController()
         self.present(highScoreVC, animated: true, completion: nil)
     }
     
