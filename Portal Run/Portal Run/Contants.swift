@@ -17,6 +17,8 @@ var moveSpeed: CGFloat! = 300
 
 let heroCatergory: UInt32 = 0x1 << 0
 let wallCatergory: UInt32 = 0x1 << 1
+var portals = [Portal]()
+
 
 
 

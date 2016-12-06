@@ -10,52 +10,40 @@ import Foundation
 import SpriteKit
 
 class PortalGenerator: SKSpriteNode {
-    var portals = [Portal]()
-
     
     
-    func generatePortal(index: Int, count: Int, x: CGFloat) {
+    func generatePortal(index: Int, x: CGFloat) {
         let portal = Portal()
         if portals.count == 2 {
-            portals = [Portal]()
-        }
-        
-        if index == 0 {
-            if count == 1 {
-                portal.position.x = portals[0].position.x
+            for portal in portals {
+                portal.removeFromParent()
             }
-            else {
-                portal.position.x = x
+            portals.removeAll()
+        }
+        if portals.count == 1 {
+            portal.position.x = portals[0].position.x
 
-            }
-            portal.position.y =  TopHeight + portal.size.height/2 + 10
             
         }
-        
+        if portals.count == 0 {
+            portal.position.x = x
+
+        }
+        if index == 0 {
+            portal.position.y =  TopHeight + portal.size.height/2 + 10
+
+            
+        }
         if index == 1 {
-            if count == 1 {
-                portal.position.x = portals[0].position.x
-            }
-            else {
-                portal.position.x = x
-                
-            }
             portal.position.y =  CenterHeight + portal.size.height/2 + 10
-            
-            
+
         }
         
         if index == 2 {
-            if count == 1 {
-                portal.position.x = portals[0].position.x
-            }
-            else {
-                portal.position.x = x
-                
-            }
             portal.position.y =  BottomHeight + portal.size.height/2 + 10
-            
+
         }
+        
         print(portal.position.x, portal.position.y)
         addChild(portal)
         portals.append(portal)
