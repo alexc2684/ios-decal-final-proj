@@ -52,21 +52,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    func placeTele(x: CGFloat, y: CGFloat, ammount: Int){
+    func placeTele(x: CGFloat, y: CGFloat){
         let diffs = [abs(Float(TopHeight - y)), abs(Float(CenterHeight - y)), abs(Float(BottomHeight - y))]
         let minimum = diffs.min()
         var position = diffs.index(of: minimum!) //Now if 0, goes to top, 1 goes to center, 2 goes to bot.
-        if ammount == 1 {
-            total_teles = 2
-            portalGenerator.generatePortal(index: position!, count: ammount, x: x)
-        }
-        if ammount == 0 {
-            total_teles = 1
-            portalGenerator.generatePortal(index: position!, count: ammount, x: x)
-        }
-        if ammount == 2 { //Still need to do this case where both dissapear and then only the new click is the first portal
-            
-        }
+        portalGenerator.generatePortal(index: position!, x: x)
+        
         
             
         
@@ -92,7 +83,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if let touch = touches.first {
                 let position = touch.location(in: self)
                 print(position.x, position.y)
-                placeTele(x: position.x, y: position.y, ammount: total_teles)
+                placeTele(x: position.x, y: position.y)
 
             }
         }
@@ -126,7 +117,54 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func teleport() {
+        var distances = [Float]()
+        for i in portals {
+            distances.append(abs(Float(hero.position.y - i.position.y)))
+            
+        }
+        let closes = distances.min()
+        var pos = distances.index(of: closes!)
+        var new_loc:CGFloat = 0
+        if pos == 1 {
+            let move = SKAction.moveTo(y: portals[0].position.y, duration: 0.01)
+            for i in portals {
+                i.removeFromParent()
+            }
+            new_loc = portals[0].position.y
+            portals.removeAll()
+            hero.run(move)
+            
+        }
+        
+        if pos == 0 {
+            if portals.count == 1 {
+                portals[0].removeFromParent()
+                portals.removeAll()
+                return
+            }
+            let move = SKAction.moveTo(y: portals[1].position.y, duration: 0.01)
+            for i in portals {
+                i.removeFromParent()
+            }
+            new_loc = portals[1].position.y
+            portals.removeAll()
+            hero.run(move)
+
+            
+        }
+        
+        let diff = [abs(Float(TopHeight - new_loc)), abs(Float(CenterHeight - new_loc)), abs(Float(BottomHeight - new_loc))]
+        let small = diff.min()
+        print(diff)
+        var position_small = diff.index(of: small!)
+        Currently_At = position_small! + 1
+        print(Currently_At)
+        
+        
+        
         return
+        
+        
     }
     
     
