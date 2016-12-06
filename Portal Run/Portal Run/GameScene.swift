@@ -14,7 +14,7 @@ class GameScene: SKScene {
     let testingImage = SKSpriteNode(imageNamed: "Spaceship")
     
     override func didMove(to view: SKView) {
-        testingImage.position = CGPoint(x: self.size.height, y: self.size.height)
+        testingImage.position = CGPoint(x: self.size.height/2 , y: self.size.height/2)
         self.addChild(testingImage)
     }
 }
