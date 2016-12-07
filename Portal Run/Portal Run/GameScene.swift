@@ -11,15 +11,15 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
 
-    var movingGround:MovingGround!
-    var movingGroundTop:MovingGround!
-    var movingGroundBottom:MovingGround!
-    var hero:Hero!
+    var movingGround: MovingGround!
+    var movingGroundTop: MovingGround!
+    var movingGroundBottom: MovingGround!
+    var hero: Hero!
     var isStarted = false
-    var total_teles = 0
     var wallGenerator: WallGenerator!
     var isGameOver = false
-    var portalGenerator:PortalGenerator!
+    var portalGenerator: PortalGenerator!
+    var ScoreboardData: ScoreboardData!
     
     
     override func didMove(to view: SKView) {

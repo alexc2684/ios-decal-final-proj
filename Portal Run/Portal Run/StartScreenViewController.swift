@@ -84,19 +84,29 @@ class StartScreenViewController: UIViewController {
         self.view.addConstraints([xCenterConstraintForInstructionButton, topMarginForInstructionButton])
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        super.viewWillDisappear(animated)
+    }
+    
     func startNewGame() {
         let gameVC = GameViewController()
         self.present(gameVC, animated: true, completion: nil)
     }
     
     func showHighScores() {
-        let highScoreVC = HighScoreViewController()
-        self.present(highScoreVC, animated: true, completion: nil)
+        let highScoreVC = HighScoresTableViewController()
+        self.navigationController?.pushViewController(highScoreVC, animated: true)
     }
     
     func showInstructions() {
         let instructionVC = InstructionViewController()
-        self.present(instructionVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(instructionVC, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

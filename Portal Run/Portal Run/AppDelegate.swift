@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window? = UIWindow(frame: UIScreen.main.bounds)
         let startScreenVC = StartScreenViewController()
-        window?.rootViewController = startScreenVC
+        let navigationVC = UINavigationController(rootViewController: startScreenVC)
+        window?.rootViewController = navigationVC
         return true
     }
 
