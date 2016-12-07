@@ -29,6 +29,7 @@
 		F82DB8261DF772E200A613F9 /* ScoreboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB8251DF772E000A613F9 /* ScoreboardData.swift */; };
 		F82DB8291DF798A000A613F9 /* HighScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB8281DF798A000A613F9 /* HighScoresTableViewController.swift */; };
 		F8B7CC7C1DF14548002FE3D9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7CC7B1DF14548002FE3D9 /* GameScene.swift */; };
+		F9FAF7E11DF8D0A600DD687D /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = F9FAF7E01DF8D0A600DD687D /* video.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		F82DB8251DF772E000A613F9 /* ScoreboardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreboardData.swift; sourceTree = "<group>"; };
 		F82DB8281DF798A000A613F9 /* HighScoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoresTableViewController.swift; sourceTree = "<group>"; };
 		F8B7CC7B1DF14548002FE3D9 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		F9FAF7E01DF8D0A600DD687D /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = video.mov; path = "Portal Run/video.mov"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		F82B2D281DD6457A001C0483 = {
 			isa = PBXGroup;
 			children = (
+				F9FAF7E01DF8D0A600DD687D /* video.mov */,
 				F82B2D331DD6457A001C0483 /* Portal Run */,
 				F82B2D4E1DD6457B001C0483 /* Portal RunTests */,
 				F82B2D591DD6457B001C0483 /* Portal RunUITests */,
@@ -309,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9FAF7E11DF8D0A600DD687D /* video.mov in Resources */,
 				F82B2D401DD6457A001C0483 /* Main.storyboard in Resources */,
 				F82B2D371DD6457A001C0483 /* GameScene.sks in Resources */,
 				F82B2D421DD6457B001C0483 /* Assets.xcassets in Resources */,
