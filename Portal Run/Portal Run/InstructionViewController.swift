@@ -59,7 +59,7 @@ class InstructionViewController: UIViewController {
         let topMarginForGameTitle2 = NSLayoutConstraint(item: instructions, attribute: .topMargin, relatedBy: .equal, toItem: self.view, attribute: .topMargin, multiplier: 2, constant: 20)
         self.view.addConstraints([xCenterConstraintForGameTitle2, topMarginForGameTitle2])
         */
-        let imageName = "hero.png"
+        let imageName = "icon-images/hero.png"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image!)
         imageView.frame = CGRect(x: 150, y: 30, width: 30, height: 40)
@@ -123,7 +123,7 @@ class InstructionViewController: UIViewController {
         teleport1.layer.cornerRadius = 5
         self.view.addSubview(teleport1)
         
-        var image = UIImage(named: "hero.png")
+        var image = UIImage(named: "icon-images/hero.png")
         var imageView = UIImageView(image: image!)
         imageView.frame = CGRect(x: self.view.bounds.size.width * 3/5 - 25, y: 200, width: 30, height: 40)
         view.addSubview(imageView)
@@ -143,7 +143,7 @@ class InstructionViewController: UIViewController {
         teleport2.layer.cornerRadius = 5
         self.view.addSubview(teleport2)
         
-        image = UIImage(named: "hero.png")
+        image = UIImage(named: "icon-images/hero.png")
         imageView = UIImageView(image: image!)
         imageView.frame = CGRect(x: self.view.bounds.size.width * 5/7, y: 250, width: 30, height: 40)
         view.addSubview(imageView)
