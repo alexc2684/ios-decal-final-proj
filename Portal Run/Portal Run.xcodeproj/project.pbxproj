@@ -30,7 +30,7 @@
 		F82DB8291DF798A000A613F9 /* HighScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB8281DF798A000A613F9 /* HighScoresTableViewController.swift */; };
 		F8B7CC7C1DF14548002FE3D9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7CC7B1DF14548002FE3D9 /* GameScene.swift */; };
 		F9FAF7D81DF7FEFF00DD687D /* hero.png in Resources */ = {isa = PBXBuildFile; fileRef = F9FAF7D71DF7FEFF00DD687D /* hero.png */; };
-		F9FAF7DA1DF827B300DD687D /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = F9FAF7D91DF827B300DD687D /* video.mov */; };
+		F9FAF7DE1DF8BAA100DD687D /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = F9FAF7DD1DF8BAA100DD687D /* video.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,7 @@
 		F82DB8281DF798A000A613F9 /* HighScoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoresTableViewController.swift; sourceTree = "<group>"; };
 		F8B7CC7B1DF14548002FE3D9 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		F9FAF7D71DF7FEFF00DD687D /* hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hero.png; path = ../../../../Desktop/hero.png; sourceTree = "<group>"; };
-		F9FAF7D91DF827B300DD687D /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = video.mov; path = ../../../../Documents/video.mov; sourceTree = "<group>"; };
+		F9FAF7DD1DF8BAA100DD687D /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = video.mov; path = ../../../Documents/video.mov; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +122,7 @@
 		F82B2D281DD6457A001C0483 = {
 			isa = PBXGroup;
 			children = (
+				F9FAF7DD1DF8BAA100DD687D /* video.mov */,
 				F82B2D331DD6457A001C0483 /* Portal Run */,
 				F82B2D4E1DD6457B001C0483 /* Portal RunTests */,
 				F82B2D591DD6457B001C0483 /* Portal RunUITests */,
@@ -194,7 +195,6 @@
 				F82DB8281DF798A000A613F9 /* HighScoresTableViewController.swift */,
 				F9FAF7D71DF7FEFF00DD687D /* hero.png */,
 				F82B2D711DD66397001C0483 /* InstructionViewController.swift */,
-				F9FAF7D91DF827B300DD687D /* video.mov */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9FAF7DA1DF827B300DD687D /* video.mov in Resources */,
+				F9FAF7DE1DF8BAA100DD687D /* video.mov in Resources */,
 				F82B2D401DD6457A001C0483 /* Main.storyboard in Resources */,
 				F82B2D371DD6457A001C0483 /* GameScene.sks in Resources */,
 				F82B2D421DD6457B001C0483 /* Assets.xcassets in Resources */,
