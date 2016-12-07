@@ -95,6 +95,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         wallGenerator.stopWalls()
         movingGround.stop()
         hero.stop()
+        for portal in portals {
+            portal.stop()
+        }
         movingGroundTop.stop()
         movingGroundBottom.stop()
         

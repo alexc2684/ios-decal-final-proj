@@ -12,13 +12,17 @@ import SpriteKit
 class Wall: SKSpriteNode {
     let Wall_WIDTH = 30.0
     let Wall_HEIGHT = 50.0
-    let Wall_COLOR = UIColor.black
+    let Wall_COLOR = UIColor.clear
+    let obstacles = ["icon-images/bush.png", "icon-images/tree.png","icon-images/turret.png"]
     
     init() {
         let size = CGSize(width: Wall_WIDTH, height: Wall_HEIGHT)
         super.init(texture: nil, color: Wall_COLOR, size: size)
         startMoving()
         loadPhysicsBody(size: size)
+        let randomIndex = Int(arc4random_uniform(UInt32(obstacles.count)))
+        let obstacle = obstacles[randomIndex]
+        texture = SKTexture(imageNamed: obstacle)
     }
     
     
