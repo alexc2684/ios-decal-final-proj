@@ -12,12 +12,13 @@ import SpriteKit
 
 class Portal: SKSpriteNode {
     let Width = 10.0
-    let Height = 40.0
+    let Height = 50.0
     let Wall_COLOR = UIColor.red
     
     init() {
         let size = CGSize(width: Width, height: Height)
         super.init(texture: nil, color: Wall_COLOR, size: size)
+        texture = SKTexture(imageNamed: "icon-images/portal.png")
         Moving()
         loadPhysicsBody(size: size)
     }
@@ -35,6 +36,8 @@ class Portal: SKSpriteNode {
     func loadPhysicsBody(size: CGSize) {
         physicsBody = SKPhysicsBody(rectangleOf: size)
         physicsBody?.categoryBitMask = wallCatergory
+        physicsBody?.contactTestBitMask = heroCatergory
+        physicsBody?.collisionBitMask = 0
         physicsBody?.affectedByGravity = false
         
     }

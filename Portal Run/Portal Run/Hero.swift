@@ -87,6 +87,7 @@ class Hero: SKSpriteNode {
         physicsBody = SKPhysicsBody(rectangleOf: size)
         physicsBody?.categoryBitMask = heroCatergory
         physicsBody?.contactTestBitMask = wallCatergory
+        physicsBody?.collisionBitMask = 0
         physicsBody?.affectedByGravity = false
         
     }
