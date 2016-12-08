@@ -1,5 +1,5 @@
 //
-//  Contants.swift
+//  Constants.swift
 //  Portal Run
 //
 //  Created by Steven Holman on 12/5/16.

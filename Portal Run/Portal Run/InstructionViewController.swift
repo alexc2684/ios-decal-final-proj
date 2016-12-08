@@ -168,7 +168,7 @@ class InstructionViewController: UIViewController {
         backButton.translatesAutoresizingMaskIntoConstraints = false
     }
     func makeVideoButton() {
-        var videoButton = UIButton(frame: CGRect(x: self.view.bounds.size.width * 1/2, y: 300, width: 30, height: 40))
+        let videoButton = UIButton(frame: CGRect(x: self.view.bounds.size.width * 1/2, y: 300, width: 30, height: 40))
         videoButton.backgroundColor = UIColor.gray
         videoButton.setTitle("Demo", for: .normal)
         videoButton.titleLabel?.font = UIFont(name: "Menlo-Regular", size: (videoButton.titleLabel?.font.pointSize)!)

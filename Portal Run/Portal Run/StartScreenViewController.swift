@@ -96,7 +96,7 @@ class StartScreenViewController: UIViewController {
     
     func startNewGame() {
         let gameVC = GameViewController()
-        self.present(gameVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(gameVC, animated: false)
     }
     
     func showHighScores() {

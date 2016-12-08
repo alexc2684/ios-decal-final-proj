@@ -34,11 +34,16 @@ class GameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewWillAppear(animated)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        super.viewWillDisappear(animated)
+    }
     /*
      // MARK: - Navigation
      

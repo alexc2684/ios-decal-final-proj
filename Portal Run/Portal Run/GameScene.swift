@@ -19,8 +19,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var wallGenerator: WallGenerator!
     var isGameOver = false
     var portalGenerator: PortalGenerator!
-    var ScoreboardData: ScoreboardData!
-    
+    var scoreboardData: ScoreboardData!
+    var scoreboard: Scoreboard!
+    var timer: Timer!
+    var defaultMoveSpeed: CGFloat!
     
     override func didMove(to view: SKView) {
 
@@ -51,6 +53,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         portalGenerator = PortalGenerator(color: UIColor.clear, size: view.frame.size)
         addChild(portalGenerator)
         
+        // Adding the scoreboard
+        scoreboard = Scoreboard(positionAt: CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/2))
+        addChild(scoreboard)
+        
+        // Necessary item needed to increase the difficulty of the game by speeding it up
+        self.defaultMoveSpeed = moveSpeed
     }
     
     func placeTele(x: CGFloat, y: CGFloat){
@@ -61,6 +69,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         portalGenerator.generatePortal(index: position!, x: x)
     }
     
+    /** Indicates what happens when the user touches the screen when the GameScene is active. */
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if isGameOver{
             restart()
@@ -74,9 +83,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             hero.stop()
             hero.startRunning()
             wallGenerator.startGeneratingWallsEvery(seconds: 2.5)
+            // Adding the scoreboard data.
+            
+            scoreboardData = ScoreboardData()
+            self.timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: self.increaseDifficulty(timer:))
             isStarted = true
-        }
-        else {
+        } else {
             if let touch = touches.first {
                 let position = touch.location(in: self)
                 print(position.x, position.y)
@@ -87,9 +99,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     }
     
-    
+    /** The display layout of the GameScene and actions to take when the game is over. */
     func gameOver(){
         isGameOver = true
+        scoreboardData.stopTimer()
+        moveSpeed = self.defaultMoveSpeed
         
         hero.physicsBody = nil
         wallGenerator.stopWalls()
@@ -108,6 +122,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameoverlabel.fontName = "Helvetica"
         gameoverlabel.fontSize = 22.0
         addChild(gameoverlabel)
+        
+        if ScoreboardData.updateTopScore(score: self.scoreboardData.currentScore) {
+            //TODO: Shows a medal if the score makes it to the top ten scores
+        }
     }
     
     func restart() {
@@ -182,6 +200,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    /** Increases the difficulty of the game based how much time has elapsed during the session. */
+    @objc func increaseDifficulty(timer: Timer) {
+        if Int(scoreboardData.timeElapsed) % 5 == 0 {
+            moveSpeed = CGFloat(moveSpeed) + CGFloat(20)
+        }
+        self.scoreboardData.updateScore(to: Int(scoreboardData.timeElapsed))
+    }
     
     
     
