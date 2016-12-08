@@ -10,7 +10,8 @@ import UIKit
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-
+    var viewController: UIViewController?
+    var button: SKNode! = nil
     var movingGround: MovingGround!
     var movingGroundTop: MovingGround!
     var movingGroundBottom: MovingGround!
@@ -85,6 +86,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     /** Indicates what happens when the user touches the screen when the GameScene is active. */
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if isGameOver{
+            if let touch = touches.first {
+                let position = touch.location(in: self)
+                print(position.x, position.y)
+                if button.contains(position) {
+                    print("tapped")
+                    let startVC = StartScreenViewController()
+                    self.viewController?.navigationController?.pushViewController(startVC, animated: true)
+                }
+            }
+            self.removeChildren(in: [button])
             restart()
         }
         
@@ -142,6 +153,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if ScoreboardData.updateTopScore(score: self.scoreboardData.currentScore) {
             //TODO: Shows a medal if the score makes it to the top ten scores
         }
+        button = SKSpriteNode(color: SKColor.red, size: CGSize(width: 100, height: 44))
+        button.position.x = view!.center.x
+        button.position.y = view!.center.y - 40
+        var text = SKLabelNode(text: "Quit")
+        button.addChild(text)
+        self.addChild(button)
     }
     
     func restart() {
