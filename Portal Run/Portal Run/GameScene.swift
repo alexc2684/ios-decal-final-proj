@@ -19,10 +19,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var wallGenerator: WallGenerator!
     var isGameOver = false
     var portalGenerator: PortalGenerator!
+    var cloudGenerator: CloudGenerator!
     var scoreboardData: ScoreboardData!
     var scoreboard: Scoreboard!
     var timer: Timer!
     var defaultMoveSpeed: CGFloat!
+    var touchToStartlabel: SKLabelNode!
     
     override func didMove(to view: SKView) {
 
@@ -50,6 +52,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(wallGenerator)
         physicsWorld.contactDelegate = self
         
+        cloudGenerator = CloudGenerator(color: UIColor.clear, size: view.frame.size)
+        addChild(cloudGenerator) // Needs fixing
+        
         portalGenerator = PortalGenerator(color: UIColor.clear, size: view.frame.size)
         addChild(portalGenerator)
         
@@ -57,6 +62,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreboard = Scoreboard(positionAt: CGPoint(x: view.center.x, y: view.center.y))
         addChild(scoreboard)
         
+        touchToStartlabel = SKLabelNode(text: "Touch to Start!")
+        touchToStartlabel.fontColor = UIColor.black
+        touchToStartlabel.position.x = view.center.x
+        touchToStartlabel.position.y = view.center.y + 40
+        touchToStartlabel.fontName = "Helvetica"
+        touchToStartlabel.fontSize = 22.0
+        addChild(touchToStartlabel)
+
         // Necessary item needed to increase the difficulty of the game by speeding it up
         self.defaultMoveSpeed = moveSpeed
     }
@@ -77,12 +90,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         if !isStarted {
+            touchToStartlabel.removeFromParent()
             movingGround.start()
             movingGroundTop.start()
             movingGroundBottom.start()
             hero.stop()
             hero.startRunning()
             wallGenerator.startGeneratingWallsEvery(seconds: 2.5)
+            cloudGenerator.startGeneratingcloudsEvery(seconds: 7)
             // Adding the scoreboard data.
             
             scoreboardData = ScoreboardData()
@@ -107,6 +122,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         hero.physicsBody = nil
         wallGenerator.stopWalls()
+        cloudGenerator.stopClouds()
         movingGround.stop()
         hero.stop()
         for portal in portals {
@@ -116,7 +132,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         movingGroundBottom.stop()
         
         let gameoverlabel = SKLabelNode(text: "Game Over!")
-        gameoverlabel.fontColor = UIColor.black
+        gameoverlabel.fontColor = UIColor.red
         gameoverlabel.position.x = view!.center.x
         gameoverlabel.position.y = view!.center.y + 40
         gameoverlabel.fontName = "Helvetica"
@@ -203,7 +219,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     /** Increases the difficulty of the game based how much time has elapsed during the session. */
     @objc func increaseDifficulty(timer: Timer) {
         if Int(scoreboardData.timeElapsed) % 5 == 0 {
-            moveSpeed = CGFloat(moveSpeed) + CGFloat(20)
+            moveSpeed = CGFloat(moveSpeed) + CGFloat(10)
         }
         self.scoreboardData.updateScore(to: Int(scoreboardData.timeElapsed))
         self.scoreboard.updateScore(to: Int(scoreboardData.timeElapsed))

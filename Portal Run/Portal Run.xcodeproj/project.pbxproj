@@ -30,6 +30,8 @@
 		F82DB8291DF798A000A613F9 /* HighScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82DB8281DF798A000A613F9 /* HighScoresTableViewController.swift */; };
 		F8B7CC7C1DF14548002FE3D9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7CC7B1DF14548002FE3D9 /* GameScene.swift */; };
 		F8E4391F1DF8DC58003B3CD3 /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E4391E1DF8DC58003B3CD3 /* Scoreboard.swift */; };
+		F8E439211DF91025003B3CD3 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E439201DF91024003B3CD3 /* Cloud.swift */; };
+		F8E439231DF91574003B3CD3 /* CloudGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E439221DF91574003B3CD3 /* CloudGenerator.swift */; };
 		F9FAF7E11DF8D0A600DD687D /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = F9FAF7E01DF8D0A600DD687D /* video.mov */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,8 @@
 		F82DB8281DF798A000A613F9 /* HighScoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoresTableViewController.swift; sourceTree = "<group>"; };
 		F8B7CC7B1DF14548002FE3D9 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		F8E4391E1DF8DC58003B3CD3 /* Scoreboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
+		F8E439201DF91024003B3CD3 /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
+		F8E439221DF91574003B3CD3 /* CloudGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudGenerator.swift; sourceTree = "<group>"; };
 		F9FAF7E01DF8D0A600DD687D /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = video.mov; path = "Portal Run/video.mov"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,10 +115,12 @@
 		6256DD2D1DF62BC3005B8E2B /* Objects and Generation */ = {
 			isa = PBXGroup;
 			children = (
-				6256DD2B1DF62BBC005B8E2B /* Wall.swift */,
-				6256DD321DF6504A005B8E2B /* PortalGenerator.swift */,
-				6256DD301DF64E95005B8E2B /* Portal.swift */,
 				F8E4391E1DF8DC58003B3CD3 /* Scoreboard.swift */,
+				F8E439201DF91024003B3CD3 /* Cloud.swift */,
+				F8E439221DF91574003B3CD3 /* CloudGenerator.swift */,
+				6256DD301DF64E95005B8E2B /* Portal.swift */,
+				6256DD321DF6504A005B8E2B /* PortalGenerator.swift */,
+				6256DD2B1DF62BBC005B8E2B /* Wall.swift */,
 				6256DD291DF62BA7005B8E2B /* WallGenerator.swift */,
 			);
 			name = "Objects and Generation";
@@ -350,6 +356,7 @@
 				F8B7CC7C1DF14548002FE3D9 /* GameScene.swift in Sources */,
 				6256DD2A1DF62BA7005B8E2B /* WallGenerator.swift in Sources */,
 				F8E4391F1DF8DC58003B3CD3 /* Scoreboard.swift in Sources */,
+				F8E439231DF91574003B3CD3 /* CloudGenerator.swift in Sources */,
 				F82B2D721DD66398001C0483 /* InstructionViewController.swift in Sources */,
 				6256DD261DF60C8E005B8E2B /* MovingGround.swift in Sources */,
 				6256DD281DF61659005B8E2B /* Hero.swift in Sources */,
@@ -359,6 +366,7 @@
 				6256DD2C1DF62BBC005B8E2B /* Wall.swift in Sources */,
 				F82B2D701DD6601B001C0483 /* StartScreenViewController.swift in Sources */,
 				6256DD2F1DF6303F005B8E2B /* Constants.swift in Sources */,
+				F8E439211DF91025003B3CD3 /* Cloud.swift in Sources */,
 				F82DB8261DF772E200A613F9 /* ScoreboardData.swift in Sources */,
 				6256DD331DF6504A005B8E2B /* PortalGenerator.swift in Sources */,
 			);
