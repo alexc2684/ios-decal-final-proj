@@ -27,6 +27,7 @@ class GameViewController: UIViewController {
         scene.scaleMode = .resizeFill
         skView.presentScene(scene)
         // Do any additional setup after loading the view.
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,21 +36,6 @@ class GameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func createButton() {
-        let backButton = UIButton(frame: CGRect(x: self.view.bounds.size.width * 1/2, y: 300, width: 30, height: 40))
-        backButton.backgroundColor = UIColor.gray
-        backButton.setTitle("Demo", for: .normal)
-        backButton.titleLabel?.font = UIFont(name: "Menlo-Regular", size: (backButton.titleLabel?.font.pointSize)!)
-        backButton.addTarget(self, action: #selector(quit), for: .touchUpInside)
-        backButton.sizeToFit()
-        backButton.layer.cornerRadius = 1
-        self.view.addSubview(backButton)
-        backButton.translatesAutoresizingMaskIntoConstraints = false
-    }
-    func quit() {
-        let startVC = StartScreenViewController()
-        self.navigationController?.pushViewController(startVC, animated: true)
-    }
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewWillAppear(animated)

@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-    var viewController: UIViewController?
+    var viewController: UIViewController!
     var button: SKNode! = nil
     var movingGround: MovingGround!
     var movingGroundTop: MovingGround!
@@ -90,9 +90,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let position = touch.location(in: self)
                 print(position.x, position.y)
                 if button.contains(position) {
-                    print("tapped")
-                    let startVC = StartScreenViewController()
-                    self.viewController?.navigationController?.pushViewController(startVC, animated: true)
+                    _ = self.viewController.navigationController?.popToRootViewController(animated: true)
                 }
             }
             self.removeChildren(in: [button])
@@ -156,7 +154,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         button = SKSpriteNode(color: SKColor.red, size: CGSize(width: 100, height: 44))
         button.position.x = view!.center.x
         button.position.y = view!.center.y - 40
-        var text = SKLabelNode(text: "Quit")
+        let text = SKLabelNode(text: "Quit")
         button.addChild(text)
         self.addChild(button)
     }

@@ -30,10 +30,10 @@ class HighScoresTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -42,8 +42,9 @@ class HighScoresTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        cell.textLabel?.text = "\(1 + indexPath.row). \(ScoreboardData.topScores[9 - indexPath.row])"
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "\(1 + indexPath.row). \(ScoreboardData.topScores[indexPath.row])"
         return cell
     }
     
