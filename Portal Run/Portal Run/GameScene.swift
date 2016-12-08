@@ -54,7 +54,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(portalGenerator)
         
         // Adding the scoreboard
-        scoreboard = Scoreboard(positionAt: CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/2))
+        scoreboard = Scoreboard(positionAt: CGPoint(x: view.center.x, y: view.center.y))
         addChild(scoreboard)
         
         // Necessary item needed to increase the difficulty of the game by speeding it up
@@ -206,6 +206,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             moveSpeed = CGFloat(moveSpeed) + CGFloat(20)
         }
         self.scoreboardData.updateScore(to: Int(scoreboardData.timeElapsed))
+        self.scoreboard.updateScore(to: Int(scoreboardData.timeElapsed))
     }
     
     
